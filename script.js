@@ -25,6 +25,20 @@ fetch(`https://viacep.com.br/ws/${cepInformado}/json/`)
     .catch(error => console.error("erro ao buscar o CEP: ", error))
 
     localStorage.setItem("cep", cepInformado);
+    localStorage.setItem("logradouro", logradouroInformado);
+    localStorage.setItem("bairro", bairroInformado);
+    localStorage.setItem("cidade", localidadeInformado);
+    localStorage.setItem("estado", ufInformado);
 
+    
 })
 
+document.addEventListener('DOMContentLoaded', () =>{
+    const cepInformado = localStorage.getItem("cep");
+    const logradouroInformado = localStorage.getItem("logradouro");
+    const bairroInformado = localStorage.getItem("bairro");
+    const cidadeInformado = localStorage.getItem("localidade");
+    const estadoInformado = localStorage.getItem("uf");
+
+
+})
