@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () =>{
     const cepInformado = localStorage.getItem("cep");
     const logradouroInformado = localStorage.getItem("logradouro");
     const bairroInformado = localStorage.getItem("bairro");
-    const cidadeInformado = localStorage.getItem("localidade");
-    const estadoInformado = localStorage.getItem("uf");
+    const cidadeInformado = localStorage.getItem("cidade");
+    const estadoInformado = localStorage.getItem("estado");
 
     document.getElementById("cep").value = cepInformado;
     document.getElementById("logradouro").value = logradouroInformado;
     document.getElementById("bairro").value = bairroInformado;
-    document.getElementById("cidade").value = localidadeInformado;
-    document.getElementById("uf").value = estadoInformado;
+    document.getElementById("cidade").value = cidadeInformado;
+    document.getElementById("estado").value = estadoInformado;
 
 })
