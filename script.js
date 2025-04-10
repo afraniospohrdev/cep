@@ -18,18 +18,17 @@ fetch(`https://viacep.com.br/ws/${cepInformado}/json/`)
             document.getElementById('bairro').value = data.bairro;
             document.getElementById('cidade').value = data.localidade;
             document.getElementById('estado').value = data.uf;
+
+            localStorage.setItem("cep", cepInformado);
+            localStorage.setItem("logradouro", data.logradouro);
+            localStorage.setItem("bairro", data.bairro);
+            localStorage.setItem("cidade", data.localidade);
+            localStorage.setItem("estado", data.uf);
         }else{
             alert("CEP nao encontrado.")
         }
     })
     .catch(error => console.error("erro ao buscar o CEP: ", error))
-
-    localStorage.setItem("cep", cepInformado);
-    localStorage.setItem("logradouro", logradouroInformado);
-    localStorage.setItem("bairro", bairroInformado);
-    localStorage.setItem("cidade", localidadeInformado);
-    localStorage.setItem("estado", ufInformado);
-
     
 })
 
@@ -40,5 +39,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     const cidadeInformado = localStorage.getItem("localidade");
     const estadoInformado = localStorage.getItem("uf");
 
+    document.getElementById("cep").value = cepInformado;
+    document.getElementById("logradouro").value = logradouroInformado;
+    document.getElementById("bairro").value = bairroInformado;
+    document.getElementById("cidade").value = localidadeInformado;
+    document.getElementById("uf").value = estadoInformado;
 
 })
